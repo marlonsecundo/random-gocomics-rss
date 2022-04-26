@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "random-gocomics-rss",
+  "version": "1.0.0",
+  "description": "Get a random gocomics rss",
+  "main": "index.js",
+  "repository": "https://github.com/marlonsecundo/random-gocomics-rss",
+  "author": "Marlon Secundo <marlon_secundo@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^19.0.0"
+  }
+}
