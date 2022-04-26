@@ -21,8 +21,16 @@ const getRSSLinks = (htmlText) => {
   for (let i = 0; i < aList.length; i++) {
     const aItem = aList.item(i);
 
+    let rss = "";
+    let link = "";
+
     if (aItem.href.endsWith(".rss")) {
-      links.push("https://www.comicsrss.com" + aItem.href.substring(1));
+      rss = "https://www.comicsrss.com" + aItem.href.substring(1);
+
+      links.push({ rss, link });
+    } else {
+      link = aItem.href;
+      links[links.length - 1].link = link;
     }
   }
 
@@ -48,7 +56,10 @@ var req = http.request(options, function (res) {
 
     const randomLink = getRandomLink(links);
 
-    console.log("Random Link:\n" + randomLink);
+    console.log("Random Link:\n");
+
+    console.log("RSS: " + randomLink.rss + "\n");
+    console.log("LINK: " + randomLink.link + "\n");
   });
 });
 
